@@ -79,7 +79,7 @@ function Cadastro() {
           required
         />
         <input
-          type="text"
+          type="number"
           id="preco"
           placeholder="Preço"
           value={preco}
