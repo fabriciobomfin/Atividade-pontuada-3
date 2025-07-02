@@ -5,6 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull; // Adicionada esta importação
+import jakarta.validation.constraints.Positive; // Adicionada esta importação
+import org.hibernate.validator.constraints.URL; // Adicionada esta importação
 
 @Entity
 public class Pedido {
@@ -18,6 +21,8 @@ public class Pedido {
     @NotBlank(message = "Descricao não pode estar vazia")
     private String descricao;
 
+    @NotNull(message = "Preço não pode ser nulo") // Adicionada esta anotação
+    @Positive(message = "Preço deve ser um valor positivo") // Adicionada esta anotação
     private Double preco;
 
     @NotBlank(message = "Categoria não pode estar vazia")
@@ -27,7 +32,7 @@ public class Pedido {
     private String disponibilidade;
 
     @NotBlank(message = "URL não pode estar vazia")
-    private String url;
+    @URL(message = "Formato de URL inválido") 
 
     public Pedido() {
     }
@@ -50,19 +55,19 @@ public class Pedido {
         this.id = id;
     }
 
-    public @NotBlank(message = "Nome não pode estar vazio") String getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(@NotBlank(message = "Nome não pode estar vazio") String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public @NotBlank(message = "Descrição não pode estar vazia") String getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(@NotBlank(message = "Descrição não pode estar vazia") String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
@@ -74,27 +79,27 @@ public class Pedido {
         this.preco = preco;
     }
 
-    public @NotBlank(message = "Categoria não pode estar vazia") String getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(@NotBlank(message = "Categoria não pode estar vazia") String categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    public @NotBlank(message = "Disponibilidade não pode estar vazia") String getDisponibilidade() {
+    public String getDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(@NotBlank(message = "Disponibilidade não pode estar vazia") String disponibilidade) {
+    public void setDisponibilidade(String disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 
-    public @NotBlank(message = "URL não pode estar vazia") String getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(@NotBlank(message = "URL não pode estar vazia") String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 }
