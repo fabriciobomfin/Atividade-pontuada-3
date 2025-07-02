@@ -14,7 +14,7 @@ function CardapioLista() {
         <h2>Cardápio</h2>
         <Cardapio />
         <button onClick={() => navigate("/")} className="link-voltar">
-          Pagina inicial
+          Página inicial
         </button>
       </div>
     </div>

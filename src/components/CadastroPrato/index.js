@@ -115,7 +115,7 @@ function Cadastro() {
       </form>
 
       <button onClick={() => navigate("/lista")} className="link-usuarios">
-        Ver Cardapio
+        Ver Cardápio
       </button>
 
       <MensagemFeedback
