@@ -2,15 +2,22 @@
 
 html,
 body {
-  height: 100%;
+  height: auto;
   margin: 0;
-  padding: 0;
+  /* padding: 0; -> Será definido nas media queries para afastamento */
   font-family: Arial, sans-serif;
 
   background: url('../../assets/images/background.avif');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* ADICIONADO PARA CENTRALIZAR O CONTEÚDO DA PÁGINA */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+  box-sizing: border-box; /* Garante que o padding afaste o conteúdo interno */
 }
 .imagem {
   display: flex;
@@ -64,4 +71,93 @@ button {
 button:hover {
   background-color: #fff;
   color: #ffb236;
+}
+
+/* MEDIA QUERIES */
+
+/* Media query para telas maiores que 900px (desktop) */
+@media (min-width: 901px) {
+  body {
+    padding: 30px; /* AFASTAR DAS MARGENS EM TELAS GRANDES */
+  }
+}
+
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px; /* AFASTAR DAS MARGENS EM TABLETS */
+  }
+
+  .welcome-container {
+    padding: 50px;
+    height: auto;
+    width: 75%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px; /* AFASTAR DAS MARGENS EM CELULARES */
+  }
+
+  .welcome-container {
+    padding: 50px;
+    height: auto;
+    width: 75%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 375px) {
+  body {
+    padding: 20px 0; /* AFASTAR DAS MARGENS EM CELULARES MUITO PEQUENOS */
+  }
+
+  .welcome-container {
+    padding: 20px;
+    height: auto;
+    display:flex;
+    margin:0 20px 0 20px;
+    justify-content:center;
+    width:75%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }

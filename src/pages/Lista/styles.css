@@ -1,38 +1,99 @@
-/* src\pages\Lista\styles.css */
+/* Estilos Padrão e para Telas Grandes ( >= 901px ) */
+/* A media query min-width é usada para CLAREZA, mas o que está aqui
+   já se aplica por padrão a telas maiores que 900px se não for
+   sobrescrito por uma media query max-width. */
+@media (min-width: 901px) { /* NOVO: Media query para telas maiores que 900px */
+  .pagina-lista-usuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o container seja centralizado verticalmente */
+    padding: 32px; /* Espaçamento padrão para telas grandes */
+  }
 
-
-
-.pagina-lista-usuarios .container {
-  
+  .pagina-lista-usuarios .container {
     padding: 75px;
     box-sizing: border-box;
     background: rgba(30, 30, 30, 0.9);
-    border-radius:20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    overflow-y: auto;
-    text-align: center;
     border-radius: 8px;
-}
-  
-.pagina-lista-usuarios .container h2 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Largura base, permite elasticidade */
+    max-width: 500px; /* Limita a largura em telas muito grandes */
+    max-height: 80vh; /* Limita a altura para permitir scroll interno */
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo exceder max-height */
+    text-align: center;
+    /* justify-content: center; <- Removido, isso seria para flexbox dentro do container, e o container já é flex-direction column por padrão e text-align center para texto. Se for para alinhar os itens internos do container, considere usar align-items: center ou margin: auto em itens específicos. */
+  }
+
+  .pagina-lista-usuarios .container h2 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 35px;
     color: #ffb236;
-}
-  
-.pagina-lista-usuarios .container .link-voltar {
+  }
+
+  .pagina-lista-usuarios .container .link-voltar {
     display: block;
     margin-top: 20px;
     font-size: 16px;
     text-align: center;
-    color: #f4f4f4; 
+    color: #f4f4f4;
     text-decoration: none;
+  }
+
+  .pagina-lista-usuarios .container .link-voltar:hover {
+    text-decoration: none;
+  }
 }
-  
-.pagina-lista-usuarios .container .link-voltar:hover {
-    text-decoration: none;
+
+
+/* Responsivo para tablets (até 900px) */
+@media (max-width: 900px) {
+  .pagina-lista-usuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .pagina-lista-usuarios .container {
+    padding: 50px;
+    max-width: 90%; /* Ajuste para tablets */
+    border-radius: 12px;
+  }
+
+  .pagina-lista-usuarios .container h2 {
+    font-size: 30px;
+  }
+
+  .pagina-lista-usuarios .container .link-voltar {
+    font-size: 15px;
+  }
+}
+
+/* Responsivo para celulares (até 600px) */
+@media (max-width: 600px) {
+  .pagina-lista-usuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .pagina-lista-usuarios .container {
+    padding: 30px;
+    width: 95%; /* Ajuste para celulares */
+    max-width: 100%; /* Permite ocupar mais espaço em celulares */
+    border-radius: 10px;
+  }
+
+  .pagina-lista-usuarios .container h2 {
+    font-size: 24px;
+  }
+
+  .pagina-lista-usuarios .container .link-voltar {
+    font-size: 14px;
+  }
 }

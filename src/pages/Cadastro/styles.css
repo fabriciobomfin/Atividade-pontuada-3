@@ -1,10 +1,123 @@
-/* src\pages\Cadastro\styles.css */
+.container {
+  padding: 40px 20px;
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px; /* Largura base, usada para telas menores */
+  max-width: 500px; /* AJUSTADO: Aumentei o max-width para telas maiores que 900px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
 
-.pagina-cadastro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-    padding: 32px;
+.container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px; /* Adicionado margin-bottom para separar do título */
+  object-fit: contain;
+}
 
+h2 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #ffb236;
+  margin-bottom: 20px; /* Adicionado para separar do primeiro input */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+input,
+button {
+  width: 75%; /* Ajustado para 80% como padrão, para ser mais amplo em telas maiores */
+  padding: 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input {
+  border: 1px solid #ccc;
+}
+
+.link-usuarios {
+  margin-top: 25px;
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 14px;
+}
+
+.link-usuarios:hover {
+  text-decoration: none;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Responsivo para tablets (até 900px) */
+@media (max-width: 900px) {
+  .pagina-cadastro {
+    padding: 24px;
   }
+
+  .container {
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 90%; /* Permite que o container ocupe mais espaço em tablets */
+    max-width: 450px; /* Novo max-width para tablets para não esticar demais */
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+ 
+}
+
+/* Responsivo para celulares (até 600px) */
+@media (max-width: 600px) {
+  .pagina-cadastro {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 20px 15px;
+    width: 95%; /* Ajustado para 95% em celulares */
+    border-radius: 8px;
+    max-width: none; /* Remove o max-width para ocupar o espaço disponível */
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+ 
+
+  .link-usuarios {
+    font-size: 13px;
+  }
+}
+
+/* Media query para celulares muito pequenos (até 375px) */
+@media (max-width: 375px) {
+  .pagina-cadastro {
+    padding: 15px;
+  }
+  .container {
+    padding: 15px 10px;
+    width: 100%;
+  }
+ 
+  h2 {
+    font-size: 15px;
+  }
+}
