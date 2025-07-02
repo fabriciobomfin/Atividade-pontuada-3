@@ -14,7 +14,7 @@ const Home = () => {
     <img src={logo} alt="Logo da empresa"  class = "imagem"/>
       <div className="buttons">
         <button onClick={() => navigate('/cadastro')}>Cadastrar Prato</button>
-        <button onClick={() => navigate('/lista')}>Lista de cardapios</button>
+        <button onClick={() => navigate('/lista')}>Lista de cardápios</button>
       </div>
     </div>
   );
