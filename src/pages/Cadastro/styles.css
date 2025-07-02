@@ -72,7 +72,7 @@ input {
   .container {
     padding: 30px 20px;
     border-radius: 10px;
-    width: 90%; /* Permite que o container ocupe mais espaço em tablets */
+    width: 90%; 
     max-width: 450px; /* Novo max-width para tablets para não esticar demais */
   }
 
@@ -90,8 +90,8 @@ input {
   }
 
   .container {
-    padding: 20px 15px;
-    width: 95%; /* Ajustado para 95% em celulares */
+    padding: 20px 20px;
+    width: 100%; /* Ajustado para 95% em celulares */
     border-radius: 8px;
     max-width: none; /* Remove o max-width para ocupar o espaço disponível */
   }
