@@ -19,7 +19,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 90%; /* Largura base, permite elasticidade */
     max-width: 500px; /* Limita a largura em telas muito grandes */
-    max-height: 80vh; /* Limita a altura para permitir scroll interno */
+    min-height: 80vh; /* Limita a altura para permitir scroll interno */
     overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo exceder max-height */
     text-align: center;
     /* justify-content: center; <- Removido, isso seria para flexbox dentro do container, e o container já é flex-direction column por padrão e text-align center para texto. Se for para alinhar os itens internos do container, considere usar align-items: center ou margin: auto em itens específicos. */

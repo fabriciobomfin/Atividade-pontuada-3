@@ -1,37 +1,19 @@
 /* src\pages\Welcome\styles.css */
 
-html {
-  height: 100%; /* Garante que o html ocupe 100% da altura da viewport */
-}
-
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  color: white; /* Adicionado para garantir que o texto seja visível no background */
+  color: white;
 
-  /* Propriedades do Background */
-  background: url('../../assets/images/background.avif');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; /* Adicionado para fixar o background na rolagem, se houver */
-
-  /* Centralização do Conteúdo da Página */
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  min-height: 100%; /* Usa 100% da altura do HTML, que já é 100vh */
-  box-sizing: border-box; /* Garante que o padding afaste o conteúdo interno */
-}
+  align-items: center;
+  justify-content: center;
 
-/* Se houver um logo dentro de welcome-container com a classe 'imagem' */
-.welcome-container .imagem {
-  /* Assumindo que é um logo no topo do container */
-  width: 50%; /* Largura da imagem relativa ao container */
-  max-width: 200px; /* Definir um máximo para não ficar gigante */
-  height: auto; /* Manter proporção */
-  margin-bottom: 20px; /* Espaçamento abaixo da imagem */
-  /* Removido position: absolute aqui, a menos que seja especificamente para um overlay */
+  background: url('../../assets/images/background.avif') no-repeat center center fixed;
+  background-size: cover;
+  box-sizing: border-box;
 }
 
 .welcome-container {
@@ -43,18 +25,24 @@ body {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  min-height: 320px; /* Usar min-height para flexibilidade */
-  height: auto; /* Ajusta a altura automaticamente */
+  min-height: 320px;
   text-align: center;
   background: transparent;
-  width: 80%; /* Ajuste a largura inicial para ser mais responsiva */
-  max-width: 600px; /* Limite a largura máxima em telas grandes */
-  position: relative; /* Para que elementos posicionados absolutamente dentro dele se baseiem nele, se houver */
+  width: 80%;
+  max-width: 600px;
 }
 
+/* Logo */
+.welcome-container .imagem {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Títulos */
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px; /* Adicionado espaçamento */
+  margin-bottom: 10px;
 }
 
 p {
@@ -63,18 +51,19 @@ p {
   color: #c5c5c5;
 }
 
+/* Botões */
 .buttons {
-  margin-top: 50px; /* Reduzido de 150px, que era muito */
-  display: flex; /* Para alinhar botões lado a lado se houver mais de um */
-  flex-direction: column; /* Botões um abaixo do outro por padrão */
-  gap: 20px; /* Espaçamento entre os botões */
-  width: 100%; /* Ocupar a largura do container */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
 .buttons button {
-  width: 100%; /* Botões ocupam a largura total dentro do .buttons */
-  max-width: 300px; /* Limite a largura dos botões */
-  margin: 0 auto; /* Centraliza os botões dentro do .buttons */
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 button {
@@ -93,78 +82,75 @@ button:hover {
   color: #ffb236;
 }
 
-/* MEDIA QUERIES OTIMIZADAS */
+/* MEDIA QUERIES RESPONSIVAS */
 
-/* Para telas até 900px (tablets e celulares grandes) */
 @media (max-width: 900px) {
   body {
-    padding: 20px; /* AFASTAR DAS MARGENS EM TABLETS */
+    padding: 20px;
   }
 
   .welcome-container {
-    padding: 40px; /* Um pouco menos de padding para telas menores */
-    width: 85%; /* Ocupa mais largura da tela */
+    padding: 40px;
+    width: 85%;
   }
 
   h1 {
-    font-size: 2.2rem; /* Levemente menor */
+    font-size: 2.2rem;
   }
 
   p {
-    font-size: 1.1rem; /* Levemente menor */
+    font-size: 1.1rem;
   }
 
   .buttons {
-    margin-top: 40px; /* Ajuste o espaçamento */
+    margin-top: 40px;
   }
 }
 
-/* Para telas até 600px (celulares) */
 @media (max-width: 600px) {
   body {
-    padding: 15px; /* AFASTAR DAS MARGENS EM CELULARES */
+    padding: 15px;
   }
 
   .welcome-container {
-    padding: 30px; /* Menos padding */
-    width: 90%; /* Ocupa ainda mais largura */
+    padding: 30px;
+    width: 90%;
   }
 
   h1 {
-    font-size: 2rem; /* Tamanho para celulares */
+    font-size: 2rem;
   }
 
   p {
-    font-size: 1rem; /* Tamanho para celulares */
+    font-size: 1rem;
   }
 
   .buttons {
-    margin-top: 30px; /* Ajuste o espaçamento */
+    margin-top: 30px;
   }
 }
 
-/* Para telas até 375px (celulares muito pequenos) */
 @media (max-width: 375px) {
   body {
-    padding: 10px; /* AFASTAR DAS MARGENS EM CELULARES MUITO PEQUENOS */
+    padding: 10px;
   }
 
   .welcome-container {
-    padding: 20px; /* Padding menor ainda */
-    width: 90%; /* Ocupa quase toda a largura */
-    margin: 0 auto; /* Garantir centralização horizontal */
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
   }
 
   h1 {
-    font-size: 1.8rem; /* Tamanho menor */
+    font-size: 1.8rem;
   }
 
   p {
-    font-size: 0.9rem; /* Tamanho menor */
+    font-size: 0.9rem;
   }
 
   button {
-    padding: 10px 15px; /* Botões menores */
+    padding: 10px 15px;
     font-size: 0.85rem;
   }
 }
