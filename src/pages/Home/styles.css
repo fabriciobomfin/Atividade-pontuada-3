@@ -1,21 +1,28 @@
 /* src\pages\Welcome\styles.css */
 
-html, body {
-  height: 100%;
+html,
+body {
+  height: auto;
   margin: 0;
-  padding: 0;
+  /* padding: 0; -> Será definido nas media queries para afastamento */
   font-family: Arial, sans-serif;
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   background: url('../../assets/images/background.avif') no-repeat center center fixed;
-  background-size: cover;
-  box-sizing: border-box;
-}
+ background-size: cover;
 
+  /* ADICIONADO PARA CENTRALIZAR O CONTEÚDO DA PÁGINA */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+  box-sizing: border-box; /* Garante que o padding afaste o conteúdo interno */
+}
+.imagem {
+  display: flex;
+  top: 20px;
+  width: 50%;
+  position: absolute;
+}
 .welcome-container {
   border: 3px solid #fff;
   border-radius: 30px;
@@ -23,26 +30,17 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   justify-content: center;
+  height: 0 auto;
   padding: 50px;
-  min-height: 320px;
+  height: 320px;
   text-align: center;
   background: transparent;
-  width: 80%;
-  max-width: 600px;
 }
 
-/* Logo */
-.welcome-container .imagem {
-  width: 200px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-/* Títulos */
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
 }
 
 p {
@@ -51,22 +49,13 @@ p {
   color: #c5c5c5;
 }
 
-/* Botões */
 .buttons {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  margin-top: 150px;
   gap: 20px;
-  width: 100%;
-}
-
-.buttons button {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
 }
 
 button {
+  margin-top: 20px;
   padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
@@ -82,63 +71,79 @@ button:hover {
   color: #ffb236;
 }
 
-/* MEDIA QUERIES RESPONSIVAS */
+/* MEDIA QUERIES */
+
+/* Media query para telas maiores que 900px (desktop) */
+@media (min-width: 901px) {
+  body {
+    padding: 30px; /* AFASTAR DAS MARGENS EM TELAS GRANDES */
+  }
+}
+
 
 @media (max-width: 900px) {
   body {
-    padding: 20px;
+    padding: 20px; /* AFASTAR DAS MARGENS EM TABLETS */
   }
 
   .welcome-container {
-    padding: 40px;
-    width: 85%;
+    padding: 50px;
+    height: auto;
+    width: 75%;
   }
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
-  .buttons {
-    margin-top: 40px;
+  button {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 600px) {
   body {
-    padding: 15px;
+    padding: 15px; /* AFASTAR DAS MARGENS EM CELULARES */
   }
 
   .welcome-container {
-    padding: 30px;
-    width: 90%;
+    padding: 50px;
+    height: auto;
+    width: 75%;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
-  .buttons {
-    margin-top: 30px;
+  button {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
 }
 
+
 @media (max-width: 375px) {
   body {
-    padding: 10px;
+    padding: 20px 0; /* AFASTAR DAS MARGENS EM CELULARES MUITO PEQUENOS */
   }
 
   .welcome-container {
     padding: 20px;
-    width: 90%;
-    margin: 0 auto;
+    height: auto;
+    display:flex;
+    margin:0 20px 0 20px;
+    justify-content:center;
+    width:75%;
   }
 
   h1 {
@@ -146,11 +151,11 @@ button:hover {
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   button {
-    padding: 10px 15px;
-    font-size: 0.85rem;
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
